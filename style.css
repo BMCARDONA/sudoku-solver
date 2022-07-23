@@ -1,0 +1,72 @@
+
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(9, 80px);
+  grid-template-rows: repeat(9, 80px);
+}
+
+
+.r1,
+.r2,
+.r3,
+.r4,
+.r5,
+.r6,
+.r7,
+.r8,
+.r9 {
+  background-color: grey;
+  border: 1px solid black;
+  text-align: center;
+  align-content: center;
+  /* Center number in cells using Flexbox: https://stackoverflow.com/questions/45536537/centering-in-css-grid */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+
+/* Ignore for now */
+
+.background {
+  background: rgb(180, 180, 180)
+  /* background: radial-gradient(#00934e, #00064a); */
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.cell:hover {
+  /* https://stackoverflow.com/questions/40734464/javascript-backgroundcolor-does-remove-css-hover */
+  filter: brightness(85%) !important;
+  -webkit-transition: all .3s ease;
+}
+
+.cell {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  gap: 20px;
+}
+.newBoard {
+  cursor: pointer;
+}
+
+.solveBoard {
+  cursor: pointer;
+}
