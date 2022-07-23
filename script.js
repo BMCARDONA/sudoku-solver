@@ -16,9 +16,11 @@ hundredBoards = [[[0, 0, 0, 0, 8, 9, 5, 3, 1], [9, 8, 0, 0, 1, 0, 4, 7, 0], [0, 
 solveBoard = document.querySelector(".solveBoard");
 cell = document.querySelectorAll(".cell");
 newBoard = document.querySelector(".newBoard");
-color = "red";
+color = "royalblue";
 untouchedColor = "grey";
+incorrectColor = "red"
 solvedColor = "green";
+
 r1 = document.querySelectorAll(".r1");
 r2 = document.querySelectorAll(".r2");
 r3 = document.querySelectorAll(".r3");
@@ -31,18 +33,6 @@ r9 = document.querySelectorAll(".r9");
 
 
 
-for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('click', () => {
-    if (cell[i].style.backgroundColor === color) {
-      if (cell[i].innerText !== "9") {
-          cell[i].innerText = parseFloat(cell[i].innerText) + 1;
-      }
-      else {
-          cell[i].innerText = "1";
-    }
-    }
-  }
-)};
 
 
 function randomInteger(min, max) {
@@ -173,99 +163,102 @@ function printUnsolvedBoard() {
 };
 
 function printSolvedBoard() {
-  // r1
-setTimeout(function() {
-  for (let i = 0; i < r1.length; i++) {
-    r1[i].innerText = board[0][i];
-    if (r1[i].innerText === "0") {
-      r1[i].style.backgroundColor = color;
+    // r1
+    setTimeout(function() {
+      for (let i = 0; i < r1.length; i++) {
+        r1[i].innerText = board[0][i];
+        // r1[i].innerText === "0" || 
+
+        if (r1[i].style.backgroundColor === color) {
+          r1[i].style.backgroundColor = solvedColor;
+        }
+      }
+    }, 100);
+
+    // r2
+    setTimeout(function() {
+    for (let i = 0; i < r2.length; i++) {
+      r2[i].innerText = board[1][i];
+      if (r2[i].style.backgroundColor === color) {
+        r2[i].style.backgroundColor = solvedColor;
+      }
     }
-  }
-}, 100);
+    }, 200);
 
-// r2
-setTimeout(function() {
-for (let i = 0; i < r2.length; i++) {
-  r2[i].innerText = board[1][i];
-  if (r2[i].innerText === "0") {
-    r2[i].style.backgroundColor = color;
-  }
-}
-}, 200);
+    // r3
+    setTimeout(function() {
+    for (let i = 0; i < r3.length; i++) {
+      r3[i].innerText = board[2][i];
+      if (r3[i].style.backgroundColor === color) {
+        r3[i].style.backgroundColor = solvedColor;
+      }
+    }     
+    }, 300);
 
-// r3
-setTimeout(function() {
-for (let i = 0; i < r3.length; i++) {
-  r3[i].innerText = board[2][i];
-  if (r3[i].innerText === "0") {
-    r3[i].style.backgroundColor = color;
-  }
-}     
-}, 300);
+    // r4
+    setTimeout(function() {
+    for (let i = 0; i < r4.length; i++) {
+      r4[i].innerText = board[3][i];
+      if (r4[i].style.backgroundColor === color) {
+        r4[i].style.backgroundColor = solvedColor;
+      }
+    }
+    }, 400);
 
-// r4
-setTimeout(function() {
-for (let i = 0; i < r4.length; i++) {
-  r4[i].innerText = board[3][i];
-  if (r4[i].innerText === "0") {
-    r4[i].style.backgroundColor = color;
-  }
-}
-}, 400);
+    // r5
+    setTimeout(function() {
+    for (let i = 0; i < r5.length; i++) {
+      r5[i].innerText = board[4][i];
+      if (r5[i].style.backgroundColor === color) {
+        r5[i].style.backgroundColor = solvedColor;
+      }
+    }
+    }, 500);
 
-// r5
-setTimeout(function() {
-for (let i = 0; i < r5.length; i++) {
-  r5[i].innerText = board[4][i];
-  if (r5[i].innerText === "0") {
-    r5[i].style.backgroundColor = color;
-  }
-}
-}, 500);
-
-// r6
-setTimeout(function() {
-for (let i = 0; i < r6.length; i++) {
-  r6[i].innerText = board[5][i];
-  if (r6[i].innerText === "0") {
-    r6[i].style.backgroundColor = color;
-  }
-}   
-}, 600);
+    // r6
+    setTimeout(function() {
+    for (let i = 0; i < r6.length; i++) {
+      r6[i].innerText = board[5][i];
+      if (r6[i].style.backgroundColor === color) {
+        r6[i].style.backgroundColor = solvedColor;
+      }
+    }   
+    }, 600);
 
 
-// r7
-setTimeout(function() {
-for (let i = 0; i < r7.length; i++) {
-  r7[i].innerText = board[6][i];
-  if (r7[i].innerText === "0") {
-    r7[i].style.backgroundColor = color;
-  }
-}
-}, 700);
+    // r7
+    setTimeout(function() {
+    for (let i = 0; i < r7.length; i++) {
+      r7[i].innerText = board[6][i];
+      if (r7[i].style.backgroundColor === color) {
+        r7[i].style.backgroundColor = solvedColor;
+      }
+    }
+    }, 700);
 
 
-// r8
-setTimeout(function() {
-for (let i = 0; i < r8.length; i++) {
-  r8[i].innerText = board[7][i];
-  if (r8[i].innerText === "0") {
-    r8[i].style.backgroundColor = color;
-  }
-}
-}, 800);
+    // r8
+    setTimeout(function() {
+    for (let i = 0; i < r8.length; i++) {
+      r8[i].innerText = board[7][i];
+      if (r8[i].style.backgroundColor === color) {
+        r8[i].style.backgroundColor = solvedColor;
+      }
+    }
+    }, 800);
 
 
-// r9
-setTimeout(function() {
-for (let i = 0; i < r9.length; i++) {
-  r9[i].innerText = board[8][i];
-  if (r9[i].innerText === "0") {
-    r9[i].style.backgroundColor = color;
-  }
-}    
-}, 900);       
+    // r9
+    setTimeout(function() {
+    for (let i = 0; i < r9.length; i++) {
+      r9[i].innerText = board[8][i];
+      if (r9[i].style.backgroundColor === color) {
+        r9[i].style.backgroundColor = solvedColor;
+      }
+    }    
+    }, 900);       
 };
+
 
 board = []
 newBoard.addEventListener('click', () => {
@@ -275,17 +268,24 @@ newBoard.addEventListener('click', () => {
 })
 
 
-// [
-//   [7, 8, 0, 4, 0, 0, 1, 2, 0],
-//   [6, 0, 0, 0, 7, 5, 0, 0, 9],
-//   [0, 0, 0, 6, 0, 1, 0, 7, 8],
-//   [0, 0, 7, 0, 4, 0, 2, 6, 0],
-//   [0, 0, 1, 0, 5, 0, 9, 3, 0],
-//   [9, 0, 4, 0, 6, 0, 0, 0, 5],
-//   [0, 7, 0, 3, 0, 0, 0, 1, 2],
-//   [1, 2, 0, 0, 0, 7, 4, 0, 0],
-//   [0, 4, 9, 2, 0, 6, 0, 0, 7],
-// ]
+boardCopy = board;
+// This can't affect the actual board -- we'll just make a copy! The boardCopy will keep track of the user's move,
+// the original board will be used to print the correct answer. 
+for (let i = 0; i < cell.length; i++) {
+  cell[i].addEventListener('click', () => {
+  if (cell[i].style.backgroundColor === color) {
+    if (cell[i].innerText !== "9") {
+        cell[i].innerText = parseFloat(cell[i].innerText) + 1;
+        rowNumber = Math.floor(i / (9))
+        boardCopy[rowNumber][(i) % 9] = parseFloat(cell[i].innerText);
+        console.log(boardCopy)
+    }
+    else {
+        cell[i].innerText = "1";
+  }
+  }
+}
+)};
 
 
 // unsolvedBoard = board
@@ -294,19 +294,19 @@ solveBoard.addEventListener('click', () => {
     answer = solveSudoku(board)
     console.log(answer);
     printSolvedBoard()
-    for (let i = 0; i < cell.length; i++) {
-      // https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
-        if (cell[i].style.backgroundColor == color) {
-          // javascript backgroundcolor removes css hover
-            /* https://stackoverflow.com/questions/40734464/javascript-backgroundcolor-does-remove-css-hover */
-          cell[i].style.backgroundColor = solvedColor;
-        }
-      }
-    }, 250);
+    // for (let i = 0; i < cell.length; i++) {
+    //   // https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
+    //     if (cell[i].style.backgroundColor == color) {
+    //       // javascript backgroundcolor removes css hover
+    //         /* https://stackoverflow.com/questions/40734464/javascript-backgroundcolor-does-remove-css-hover */
+    //       cell[i].style.backgroundColor = solvedColor;
+    //     }
+    //   }
+    // }, 250);
     // for (let i = 0; i < r1.length; i++) {
     //   r1[i].innerText = board[0][i];
     // }
-})
+    })
 
 
 
@@ -385,4 +385,4 @@ function isValidAtPosition(value, row, col, board) {
 
   return true
 }
-
+})
