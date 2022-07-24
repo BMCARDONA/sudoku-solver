@@ -166,109 +166,152 @@ function printSolvedBoard() {
     // r1
     setTimeout(function() {
       for (let i = 0; i < r1.length; i++) {
-        console.log(r1[i].innerText);
-        console.log(board[0][i]);
         // == is super important! I think we might be comparing a string to a number, but we don't care about data types (hence, we do not use ===)
         if (r1[i].style.backgroundColor !== untouchedColor && r1[i].innerText == board[0][i]) {
-          r1[i].innerText = board[0][i];
           r1[i].style.backgroundColor = solvedColor;
         }
         else if (r1[i].style.backgroundColor !== untouchedColor && r1[i].innerText != board[0][i]) {
           r1[i].innerText = board[0][i];
           r1[i].style.backgroundColor = incorrectColor;
         }
-
         else {
           r1[i].innerText = board[0][i];
         }
-        // if (r1[i].style.backgroundColor === color) {
-        //   r1[i].style.backgroundColor = solvedColor;
-        // }
       }
     }, 100);
 
     // r2
+    // don't change r1.length to r2.length!
     setTimeout(function() {
-    for (let i = 0; i < r2.length; i++) {
-      r2[i].innerText = board[1][i];
-      if (r2[i].style.backgroundColor === color) {
-        r2[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r2.length; i++) {
+        if (r2[i].style.backgroundColor !== untouchedColor && r2[i].innerText == board[1][i]) {
+          r2[i].style.backgroundColor = solvedColor;
+        }
+        else if (r2[i].style.backgroundColor !== untouchedColor && r2[i].innerText != board[1][i]) {
+          r2[i].innerText = board[1][i];
+          r2[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r2[i].innerText = board[1][i];
+        }
       }
-    }
     }, 200);
 
     // r3
     setTimeout(function() {
-    for (let i = 0; i < r3.length; i++) {
-      r3[i].innerText = board[2][i];
-      if (r3[i].style.backgroundColor === color) {
-        r3[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r3.length; i++) {
+        if (r3[i].style.backgroundColor !== untouchedColor && r3[i].innerText == board[2][i]) {
+          r3[i].style.backgroundColor = solvedColor;
+        }
+        else if (r3[i].style.backgroundColor !== untouchedColor && r3[i].innerText != board[2][i]) {
+          r3[i].innerText = board[2][i];
+          r3[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r3[i].innerText = board[2][i];
+        }
       }
-    }     
     }, 300);
 
     // r4
     setTimeout(function() {
-    for (let i = 0; i < r4.length; i++) {
-      r4[i].innerText = board[3][i];
-      if (r4[i].style.backgroundColor === color) {
-        r4[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r4.length; i++) {
+        if (r4[i].style.backgroundColor !== untouchedColor && r4[i].innerText == board[3][i]) {
+          r4[i].style.backgroundColor = solvedColor;
+        }
+        else if (r4[i].style.backgroundColor !== untouchedColor && r4[i].innerText != board[3][i]) {
+          r4[i].innerText = board[3][i];
+          r4[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r4[i].innerText = board[3][i];
+        }
       }
-    }
     }, 400);
 
     // r5
     setTimeout(function() {
-    for (let i = 0; i < r5.length; i++) {
-      r5[i].innerText = board[4][i];
-      if (r5[i].style.backgroundColor === color) {
-        r5[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r5.length; i++) {
+        if (r5[i].style.backgroundColor !== untouchedColor && r5[i].innerText == board[4][i]) {
+          r5[i].innerText = board[4][i];
+          r5[i].style.backgroundColor = solvedColor;
+        }
+        else if (r5[i].style.backgroundColor !== untouchedColor && r5[i].innerText != board[4][i]) {
+            r5[i].innerText = board[4][i];
+            r5[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r5[i].innerText = board[4][i];
+        }
       }
-    }
     }, 500);
 
     // r6
     setTimeout(function() {
-    for (let i = 0; i < r6.length; i++) {
-      r6[i].innerText = board[5][i];
-      if (r6[i].style.backgroundColor === color) {
-        r6[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r6.length; i++) {
+        if (r6[i].style.backgroundColor !== untouchedColor && r6[i].innerText == board[5][i]) {
+          r6[i].style.backgroundColor = solvedColor;
+        }
+        else if (r6[i].style.backgroundColor !== untouchedColor && r6[i].innerText != board[5][i]) {
+          r6[i].innerText = board[5][i];
+          r6[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r6[i].innerText = board[5][i];
+        }
       }
-    }   
     }, 600);
 
 
     // r7
     setTimeout(function() {
-    for (let i = 0; i < r7.length; i++) {
-      r7[i].innerText = board[6][i];
-      if (r7[i].style.backgroundColor === color) {
-        r7[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r7.length; i++) {
+        if (r7[i].style.backgroundColor !== untouchedColor && r7[i].innerText == board[6][i]) {
+          r7[i].style.backgroundColor = solvedColor;
+        }
+        else if (r7[i].style.backgroundColor !== untouchedColor && r7[i].innerText != board[6][i]) {
+          r7[i].innerText = board[6][i];
+          r7[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r7[i].innerText = board[6][i];
+        }
       }
-    }
     }, 700);
 
 
     // r8
     setTimeout(function() {
-    for (let i = 0; i < r8.length; i++) {
-      r8[i].innerText = board[7][i];
-      if (r8[i].style.backgroundColor === color) {
-        r8[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r8.length; i++) {
+        if (r8[i].style.backgroundColor !== untouchedColor && r8[i].innerText == board[7][i]) {
+          r8[i].style.backgroundColor = solvedColor;
+        }
+        else if (r8[i].style.backgroundColor !== untouchedColor && r8[i].innerText != board[7][i]) {
+          r8[i].innerText = board[7][i];
+          r8[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r8[i].innerText = board[7][i];
+        }
       }
-    }
     }, 800);
 
 
     // r9
     setTimeout(function() {
-    for (let i = 0; i < r9.length; i++) {
-      r9[i].innerText = board[8][i];
-      if (r9[i].style.backgroundColor === color) {
-        r9[i].style.backgroundColor = solvedColor;
+      for (let i = 0; i < r9.length; i++) {
+        if (r9[i].style.backgroundColor !== untouchedColor && r9[i].innerText == board[8][i]) {
+          r9[i].style.backgroundColor = solvedColor;
+        }
+        else if (r9[i].style.backgroundColor !== untouchedColor && r9[i].innerText != board[8][i]) {
+          r9[i].innerText = board[8][i];
+          r9[i].style.backgroundColor = incorrectColor;
+        }
+        else {
+          r9[i].innerText = board[8][i];
+        }
       }
-    }    
-    }, 900);       
+    }, 900);     
 };
 
 
