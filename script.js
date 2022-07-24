@@ -268,7 +268,7 @@ newBoard.addEventListener('click', () => {
 })
 
 
-boardCopy = board;
+// boardCopy = board;
 // This can't affect the actual board -- we'll just make a copy! The boardCopy will keep track of the user's move,
 // the original board will be used to print the correct answer. 
 for (let i = 0; i < cell.length; i++) {
@@ -278,7 +278,7 @@ for (let i = 0; i < cell.length; i++) {
         cell[i].innerText = parseFloat(cell[i].innerText) + 1;
         rowNumber = Math.floor(i / (9))
         // boardCopy[rowNumber][(i) % 9] = parseFloat(cell[i].innerText);
-        console.log(boardCopy)
+        // console.log(boardCopy)
     }
     else {
         cell[i].innerText = "1";
