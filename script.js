@@ -16,7 +16,7 @@ hundredBoards = [[[0, 0, 0, 0, 8, 9, 5, 3, 1], [9, 8, 0, 0, 1, 0, 4, 7, 0], [0, 
 solveBoard = document.querySelector(".solveBoard");
 cell = document.querySelectorAll(".cell");
 newBoard = document.querySelector(".newBoard");
-color = "royalblue";
+color = "yellow";
 untouchedColor = "grey";
 incorrectColor = "red"
 solvedColor = "green";
@@ -43,14 +43,14 @@ function randomInteger(min, max) {
 function printUnsolvedBoard() {
       // r1
     setTimeout(function() {
-      for (let i = 0; i < r1.length; i++) {
-        r1[i].innerText = board[0][i];
-        if (r1[i].innerText === "0") {
-          r1[i].style.backgroundColor = color;
-        }
-        else {
-          r1[i].style.backgroundColor = untouchedColor;
-        }
+      for (let i = 0; i < r2.length; i++) {
+      r1[i].innerText = board[0][i];
+      if (r1[i].innerText === "0") {
+        r1[i].style.backgroundColor = color;
+      }
+      else {
+        r1[i].style.backgroundColor = untouchedColor;
+      }
       }
     }, 100);
 
@@ -166,12 +166,24 @@ function printSolvedBoard() {
     // r1
     setTimeout(function() {
       for (let i = 0; i < r1.length; i++) {
-        r1[i].innerText = board[0][i];
-        // r1[i].innerText === "0" || 
-
-        if (r1[i].style.backgroundColor === color) {
+        console.log(r1[i].innerText);
+        console.log(board[0][i]);
+        // == is super important! I think we might be comparing a string to a number, but we don't care about data types (hence, we do not use ===)
+        if (r1[i].style.backgroundColor !== untouchedColor && r1[i].innerText == board[0][i]) {
+          r1[i].innerText = board[0][i];
           r1[i].style.backgroundColor = solvedColor;
         }
+        else if (r1[i].style.backgroundColor !== untouchedColor && r1[i].innerText != board[0][i]) {
+          r1[i].innerText = board[0][i];
+          r1[i].style.backgroundColor = incorrectColor;
+        }
+
+        else {
+          r1[i].innerText = board[0][i];
+        }
+        // if (r1[i].style.backgroundColor === color) {
+        //   r1[i].style.backgroundColor = solvedColor;
+        // }
       }
     }, 100);
 
@@ -278,7 +290,7 @@ for (let i = 0; i < cell.length; i++) {
         cell[i].innerText = parseFloat(cell[i].innerText) + 1;
         rowNumber = Math.floor(i / (9))
         // boardCopy[rowNumber][(i) % 9] = parseFloat(cell[i].innerText);
-        // console.log(boardCopy)
+        console.log(board)
     }
     else {
         cell[i].innerText = "1";
