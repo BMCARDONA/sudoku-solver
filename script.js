@@ -277,7 +277,7 @@ for (let i = 0; i < cell.length; i++) {
     if (cell[i].innerText !== "9") {
         cell[i].innerText = parseFloat(cell[i].innerText) + 1;
         rowNumber = Math.floor(i / (9))
-        boardCopy[rowNumber][(i) % 9] = parseFloat(cell[i].innerText);
+        // boardCopy[rowNumber][(i) % 9] = parseFloat(cell[i].innerText);
         console.log(boardCopy)
     }
     else {
