@@ -347,7 +347,6 @@ for (let i = 0; i < cell.length; i++) {
 solveBoard.addEventListener('click', () => {
     setTimeout(function() {
     answer = solveSudoku(board)
-    console.log(answer);
     printSolvedBoard()
     // for (let i = 0; i < cell.length; i++) {
     //   // https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp

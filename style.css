@@ -70,3 +70,21 @@
 .solveBoard {
   cursor: pointer;
 }
+
+
+/* Sudoku grid lines */
+.left-vertical {
+  border-right-width: 5px;
+}
+
+.right-vertical {
+  border-right-width: 5px;
+}
+
+.r3 {
+  border-bottom-width: 5px;
+}
+
+.r6 {
+  border-bottom-width: 5px;
+}
