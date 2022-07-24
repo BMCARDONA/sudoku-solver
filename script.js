@@ -167,18 +167,13 @@ function printSolvedBoard() {
     setTimeout(function() {
       for (let i = 0; i < r1.length; i++) {
         r1[i].innerText = board[0][i];
+        // r1[i].innerText === "0" || 
+
         if (r1[i].style.backgroundColor === color) {
           r1[i].style.backgroundColor = solvedColor;
         }
-        // r1[i].innerText === "0" || 
-        // if (r1[i].style.backgroundColor === color && board[0][i] === boardCopy[0][i]) {
-        //     r1[i].style.backgroundColor = solvedColor;
-        // }
-        // else if (r1[i].style.backgroundColor === color) {
-        //     r1[i].style.backgroundColor = incorrectColor;
-        // }
       }
-    }, 100)
+    }, 100);
 
     // r2
     setTimeout(function() {
@@ -298,7 +293,6 @@ solveBoard.addEventListener('click', () => {
     setTimeout(function() {
     answer = solveSudoku(board)
     console.log(answer);
-    console.log(boardCopy)
     printSolvedBoard()
     // for (let i = 0; i < cell.length; i++) {
     //   // https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
