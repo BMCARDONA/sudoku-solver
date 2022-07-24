@@ -1,10 +1,13 @@
-
+* {
+  font-family: 'Lato', sans-serif;
+}
 
 .grid {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(9, 80px);
   grid-template-rows: repeat(9, 80px);
+  margin: 20px;
 }
 
 
@@ -32,13 +35,20 @@
 /* Ignore for now */
 
 .background {
-  background: rgb(215, 215, 215)
-  /* background: radial-gradient(#00934e, #00064a); */
+  /* background: #2b2b2b; */
+  background: #0d3629;
 }
 
 .title {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
+  color: #EFBB37;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .cell:hover {
@@ -63,14 +73,28 @@
   padding: 25px;
   gap: 20px;
 }
-.newBoard {
-  cursor: pointer;
-}
 
+.newBoard,
 .solveBoard {
   cursor: pointer;
+  font-size: 30px;
+  color: #0D2A36;
+  background:#979797;
+  border: 0px;
+  border-radius: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
+.newBoard:hover,
+.solveBoard:hover {
+  filter: brightness(35%) !important;
+  -webkit-transition: all .7s ease;
+}
 
 /* Sudoku grid lines */
 .left-vertical {
