@@ -1,7 +1,7 @@
 
-hundredNewBoards = []
 
-for i in range(100):
+hundredNewBoards = []
+for i in range(1):
     newBoard = []
     
     base  = 3
@@ -23,14 +23,20 @@ for i in range(100):
     
     for line in board: newBoard.append(line)
     
-    from random import randrange
-    for i in range(9):
-        for j in range(9):
-            if (randrange(2)) == 1:
-                newBoard[i][j] = 0;
+    # from random import randrange
+    import random
+    counter = 0
 
-    for line in newBoard:
-        print(line)
+    # Here, 17 is the # of NUMBERED squares on the grid
+    while counter < (81- 17):
+        i = random.randint(0, 8)
+        j = random.randint(0, 8)
+        if newBoard[i][j] != 0:
+            newBoard[i][j] = 0;
+            counter += 1;
 
     hundredNewBoards.append(newBoard)
 print(hundredNewBoards)
+
+
+

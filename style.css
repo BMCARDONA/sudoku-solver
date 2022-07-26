@@ -75,6 +75,10 @@
 }
 
 .newBoard,
+.easyBoard,
+.mediumBoard,
+.hardBoard,
+.impossibleBoard,
 .solveBoard {
   cursor: pointer;
   font-size: 30px;
@@ -91,6 +95,10 @@
 }
 
 .newBoard:hover,
+.easyBoard:hover,
+.mediumBoard:hover,
+.hardBoard:hover,
+.impossibleBoard:hover,
 .solveBoard:hover {
   filter: brightness(35%) !important;
   -webkit-transition: all .7s ease;

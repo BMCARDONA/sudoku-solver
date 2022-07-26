@@ -1,5 +1,9 @@
 
 
+
+
+
+
 // Helpful link: https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist
 const getColumn = (colNumber, lines) =>
 {
@@ -132,33 +136,68 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// displayGrid = () => {
+//     const grid = generateGrid();
+//     board = []
+//     for (let i = 0; i < grid.length; ++i) {
+//         const line = grid[i];
+//         board.push(line)
+//         console.log(JSON.stringify(line));
+//     }
+//     let counter = 0;
+//     // Here, 30 represents the # of NUMBERED cells!
+//     while (counter < (81 - 4)) {
+//         i = getRandomInt(0, 8);
+//         j = getRandomInt(0, 8);
+//         if (board[i][j] != 0) {
+//             board[i][j] = 0;
+//             counter += 1;
+//         }
+//       }
+//     return(board);
+// };
 
-displayGrid = () => {
-    const grid = generateGrid();
-    board = []
-    for (let i = 0; i < grid.length; ++i) {
-        const line = grid[i];
-        board.push(line)
-        console.log(JSON.stringify(line));
-    }
-    let counter = 0;
-    // Here, 30 represents the # of NUMBERED cells!
-    while (counter < (81 - 1)) {
-        i = getRandomInt(0, 8);
-        j = getRandomInt(0, 8);
-        if (board[i][j] != 0) {
-            board[i][j] = 0;
-            counter += 1;
-        }
+displayGrid = (difficulty) => {
+  if (difficulty == "impossible") {
+    numberedTiles = 4;
+  }
+  else if (difficulty == "hard") {
+    numberedTiles = 20;
+  }
+  else if (difficulty == "medium") {
+    numberedTiles = 40;
+  }
+  else if (difficulty == "easy") {
+    numberedTiles = 60;
+  }
+  const grid = generateGrid();
+  board = []
+  for (let i = 0; i < grid.length; ++i) {
+      const line = grid[i];
+      board.push(line)
+      console.log(JSON.stringify(line));
+  }
+  let counter = 0;
+  // Here, 30 represents the # of NUMBERED cells!
+  while (counter < (81 - numberedTiles)) {
+      i = getRandomInt(0, 8);
+      j = getRandomInt(0, 8);
+      if (board[i][j] != 0) {
+          board[i][j] = 0;
+          counter += 1;
       }
-    return(board);
+    }
+  return(board);
 };
-
 
 ///////////////////////////////////////////////////////////////////////
 solveBoard = document.querySelector(".solveBoard");
 cell = document.querySelectorAll(".cell");
-newBoard = document.querySelector(".newBoard");
+// newBoard = document.querySelector(".newBoard");
+easyBoard = document.querySelector(".easyBoard");
+mediumBoard = document.querySelector(".mediumBoard");
+hardBoard = document.querySelector(".hardBoard");
+impossibleBoard = document.querySelector(".impossibleBoard");
 color = "rgb(145, 70, 255)";
 untouchedColor = "grey";
 incorrectColor = "red"
@@ -452,11 +491,36 @@ function printSolvedBoard() {
     }, 900);     
 };
 
-let easyBoard = [];
-newBoard.addEventListener('click', () => {
-  easyBoard = displayGrid();
+// function getDifficulty(difficulty) {
+//   if (difficulty) == "hard"
+// }
+
+let newBoard = [];
+easyBoard.addEventListener('click', () => {
+  newBoard = displayGrid("easy");
   printUnsolvedBoard();
 })
+
+mediumBoard.addEventListener('click', () => {
+  newBoard = displayGrid("medium");
+  printUnsolvedBoard();
+})
+
+hardBoard.addEventListener('click', () => {
+  newBoard = displayGrid("hard");
+  printUnsolvedBoard();
+})
+
+impossibleBoard.addEventListener('click', () => {
+  newBoard = displayGrid("impossible");
+  printUnsolvedBoard();
+})
+
+// let gameBoard = [];
+// easyBoard.addEventListener('click', () => {
+//   gameBoard = displayGrid(easy);
+//   printUnsolvedBoard();
+// })
 
 
 for (let i = 0; i < cell.length; i++) {
@@ -478,25 +542,9 @@ for (let i = 0; i < cell.length; i++) {
 // unsolvedBoard = board
 solveBoard.addEventListener('click', () => {
     setTimeout(function() {
-    answer = solveSudoku(easyBoard)
+    answer = solveSudoku(newBoard)
     printSolvedBoard()
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
