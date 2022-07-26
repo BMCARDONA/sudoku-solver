@@ -1,4 +1,14 @@
-
+solveBoard = document.querySelector(".solveBoard");
+cell = document.querySelectorAll(".cell");
+// newBoard = document.querySelector(".newBoard");
+easyBoard = document.querySelector(".easyBoard");
+mediumBoard = document.querySelector(".mediumBoard");
+hardBoard = document.querySelector(".hardBoard");
+impossibleBoard = document.querySelector(".impossibleBoard");
+color = "rgb(145, 70, 255)";
+untouchedColor = "grey";
+incorrectColor = "red"
+solvedColor = "green";
 
 
 
@@ -159,16 +169,25 @@ function getRandomInt(min, max) {
 
 displayGrid = (difficulty) => {
   if (difficulty == "impossible") {
-    numberedTiles = 4;
+    // color = "rgb(144, 77, 111)";
+    color = "rgb(222, 49, 99)";
+    numberedTiles = 5;
   }
   else if (difficulty == "hard") {
+    // color = "rgb(0, 100, 162)";
+    color = "rgb(212, 169, 72)";
     numberedTiles = 20;
   }
   else if (difficulty == "medium") {
-    numberedTiles = 40;
+    // color = "rgb(212, 169, 72)";
+    color = "rgb(0, 126, 232)";
+    numberedTiles = 45;
   }
   else if (difficulty == "easy") {
-    numberedTiles = 60;
+    // color = "rgb(217, 78, 103)";
+    color = "rgb(46, 139, 87)";
+    
+    numberedTiles = 65;
   }
   const grid = generateGrid();
   board = []
@@ -191,17 +210,6 @@ displayGrid = (difficulty) => {
 };
 
 ///////////////////////////////////////////////////////////////////////
-solveBoard = document.querySelector(".solveBoard");
-cell = document.querySelectorAll(".cell");
-// newBoard = document.querySelector(".newBoard");
-easyBoard = document.querySelector(".easyBoard");
-mediumBoard = document.querySelector(".mediumBoard");
-hardBoard = document.querySelector(".hardBoard");
-impossibleBoard = document.querySelector(".impossibleBoard");
-color = "rgb(145, 70, 255)";
-untouchedColor = "grey";
-incorrectColor = "red"
-solvedColor = "green";
 
 r1 = document.querySelectorAll(".r1");
 r2 = document.querySelectorAll(".r2");
