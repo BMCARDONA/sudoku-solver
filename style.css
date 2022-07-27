@@ -2,12 +2,21 @@
   font-family: 'Lato', sans-serif;
 }
 
+.grid-border {
+  display: flex;
+  justify-content: center;
+}
+
 .grid {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(9, 80px);
   grid-template-rows: repeat(9, 80px);
-  margin: 20px;
+  padding: 5px;
+  background-color: black;
+  border-width: 5px;
+
+  border-color: black;
 }
 
 
@@ -35,14 +44,24 @@
 /* Ignore for now */
 
 .background {
-  /* background: #2b2b2b; */
+  /* background: aliceblue; */
+  /* background: rgb(33, 33, 33); */
   background: #0d3629;
+  animation-name: secondAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
 }
 
 .title {
   text-align: center;
-  font-size: 60px;
+  font-size: 80px;
   color: #EFBB37;
+  /* color: #0d3629; */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -55,7 +74,23 @@
   /* https://stackoverflow.com/questions/40734464/javascript-backgroundcolor-does-remove-css-hover */
   filter: brightness(85%) !important;
   -webkit-transition: all .3s ease;
+  animation-name: scaleCellAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
 }
+
+@keyframes scaleCellAnimation {
+  
+  50% {
+    transform: scale(1.2);
+  }
+}
+
 
 .cell {
   cursor: pointer;
@@ -66,6 +101,15 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+
+@keyframes secondAnimation {
+  
+  50% {
+    background: rgb(33, 33, 33);
+  }
+}
+
 
 .buttons {
   display: flex;
@@ -106,17 +150,17 @@
 
 /* Sudoku grid lines */
 .left-vertical {
-  border-right-width: 5px;
+  margin-right: 5px;
 }
 
 .right-vertical {
-  border-right-width: 5px;
+  margin-right: 5px;
 }
 
 .r3 {
-  border-bottom-width: 5px;
+  margin-bottom: 5px;
 }
 
 .r6 {
-  border-bottom-width: 5px;
+  margin-bottom: 5px;
 }
