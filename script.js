@@ -132,22 +132,23 @@ function getRandomInt(min, max) {
 displayGrid = (difficulty) => {
   if (difficulty == "impossible") {
     // color = "rgb(144, 77, 111)";
-    color = "rgb(152, 68, 100)";
+    color = "rgb(145, 70, 255)";
     numberedTiles = 5;
   }
   else if (difficulty == "hard") {
     // color = "rgb(0, 100, 162)";
-    color = "rgb(105, 93, 84)";
+    color = "rgb(0, 126, 232)";
     numberedTiles = 20;
   }
   else if (difficulty == "medium") {
     // color = "rgb(212, 169, 72)";
-    color = "rgb(0, 103, 138)";
+    // color = "rgb(46, 139, 87)";
+    color = "rgb(255, 129, 0)";
     numberedTiles = 45;
   }
   else if (difficulty == "easy") {
     // color = "rgb(217, 78, 103)";
-    color = "rgb(60, 91, 81)";
+    color = "gold";
     
     numberedTiles = 65;
   }
