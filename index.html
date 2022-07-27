@@ -10,7 +10,7 @@
 </head>
 <body class="background">
 
-  <div class="title">Sudoku Solver</div>
+  <div class="title">Sudoku</div>
   <div class="buttons">
     <button class="easyBoard">Easy</button>
     <button class="mediumBoard">Medium</button>
@@ -19,98 +19,99 @@
 
     <button class="solveBoard">Solve</button>
   </div>
+  <div class = grid-border>
+    <div class="grid">
+      <!-- Instead of adding cell to each class, I think I could have just added it in the DOM... -->
+        <div class="r1 c1 cell"></div>
+        <div class="r1 c2 cell"></div>
+        <div class="r1 c3 cell left-vertical"></div>
+        <div class="r1 c4 cell"></div>
+        <div class="r1 c5 cell"></div>
+        <div class="r1 c6 cell right-vertical"></div>
+        <div class="r1 c7 cell"></div>
+        <div class="r1 c8 cell"></div>
+        <div class="r1 c9 cell"></div>
 
-  <div class="grid">
-    <!-- Instead of adding cell to each class, I think I could have just added it in the DOM... -->
-      <div class="r1 c1 cell"></div>
-      <div class="r1 c2 cell"></div>
-      <div class="r1 c3 cell left-vertical"></div>
-      <div class="r1 c4 cell"></div>
-      <div class="r1 c5 cell"></div>
-      <div class="r1 c6 cell right-vertical"></div>
-      <div class="r1 c7 cell"></div>
-      <div class="r1 c8 cell"></div>
-      <div class="r1 c9 cell"></div>
+        <div class="r2 c1 cell"></div>
+        <div class="r2 c2 cell"></div>
+        <div class="r2 c3 cell left-vertical"></div>
+        <div class="r2 c4 cell"></div>
+        <div class="r2 c5 cell"></div>
+        <div class="r2 c6 cell right-vertical"></div>
+        <div class="r2 c7 cell"></div>
+        <div class="r2 c8 cell"></div>
+        <div class="r2 c9 cell"></div>
 
-      <div class="r2 c1 cell"></div>
-      <div class="r2 c2 cell"></div>
-      <div class="r2 c3 cell left-vertical"></div>
-      <div class="r2 c4 cell"></div>
-      <div class="r2 c5 cell"></div>
-      <div class="r2 c6 cell right-vertical"></div>
-      <div class="r2 c7 cell"></div>
-      <div class="r2 c8 cell"></div>
-      <div class="r2 c9 cell"></div>
+        <div class="r3 c1 cell"></div>
+        <div class="r3 c2 cell"></div>
+        <div class="r3 c3 cell left-vertical"></div>
+        <div class="r3 c4 cell"></div>
+        <div class="r3 c5 cell"></div>
+        <div class="r3 c6 cell right-vertical"></div>
+        <div class="r3 c7 cell"></div>
+        <div class="r3 c8 cell"></div>
+        <div class="r3 c9 cell"></div>
 
-      <div class="r3 c1 cell"></div>
-      <div class="r3 c2 cell"></div>
-      <div class="r3 c3 cell left-vertical"></div>
-      <div class="r3 c4 cell"></div>
-      <div class="r3 c5 cell"></div>
-      <div class="r3 c6 cell right-vertical"></div>
-      <div class="r3 c7 cell"></div>
-      <div class="r3 c8 cell"></div>
-      <div class="r3 c9 cell"></div>
+        <div class="r4 c1 cell"></div>
+        <div class="r4 c2 cell"></div>
+        <div class="r4 c3 cell left-vertical"></div>
+        <div class="r4 c4 cell"></div>
+        <div class="r4 c5 cell"></div>
+        <div class="r4 c6 cell right-vertical"></div>
+        <div class="r4 c7 cell"></div>
+        <div class="r4 c8 cell"></div>
+        <div class="r4 c9 cell"></div>
 
-      <div class="r4 c1 cell"></div>
-      <div class="r4 c2 cell"></div>
-      <div class="r4 c3 cell left-vertical"></div>
-      <div class="r4 c4 cell"></div>
-      <div class="r4 c5 cell"></div>
-      <div class="r4 c6 cell right-vertical"></div>
-      <div class="r4 c7 cell"></div>
-      <div class="r4 c8 cell"></div>
-      <div class="r4 c9 cell"></div>
+        <div class="r5 c1 cell"></div>
+        <div class="r5 c2 cell"></div>
+        <div class="r5 c3 cell left-vertical"></div>
+        <div class="r5 c4 cell"></div>
+        <div class="r5 c5 cell"></div>
+        <div class="r5 c6 cell right-vertical"></div>
+        <div class="r5 c7 cell"></div>
+        <div class="r5 c8 cell"></div>
+        <div class="r5 c9 cell"></div>
 
-      <div class="r5 c1 cell"></div>
-      <div class="r5 c2 cell"></div>
-      <div class="r5 c3 cell left-vertical"></div>
-      <div class="r5 c4 cell"></div>
-      <div class="r5 c5 cell"></div>
-      <div class="r5 c6 cell right-vertical"></div>
-      <div class="r5 c7 cell"></div>
-      <div class="r5 c8 cell"></div>
-      <div class="r5 c9 cell"></div>
+        <div class="r6 c1 cell"></div>
+        <div class="r6 c2 cell"></div>
+        <div class="r6 c3 cell left-vertical"></div>
+        <div class="r6 c4 cell"></div>
+        <div class="r6 c5 cell"></div>
+        <div class="r6 c6 cell right-vertical"></div>
+        <div class="r6 c7 cell"></div>
+        <div class="r6 c8 cell"></div>
+        <div class="r6 c9 cell"></div>
 
-      <div class="r6 c1 cell"></div>
-      <div class="r6 c2 cell"></div>
-      <div class="r6 c3 cell left-vertical"></div>
-      <div class="r6 c4 cell"></div>
-      <div class="r6 c5 cell"></div>
-      <div class="r6 c6 cell right-vertical"></div>
-      <div class="r6 c7 cell"></div>
-      <div class="r6 c8 cell"></div>
-      <div class="r6 c9 cell"></div>
+        <div class="r7 c1 cell"></div>
+        <div class="r7 c2 cell"></div>
+        <div class="r7 c3 cell left-vertical"></div>
+        <div class="r7 c4 cell"></div>
+        <div class="r7 c5 cell"></div>
+        <div class="r7 c6 cell right-vertical"></div>
+        <div class="r7 c7 cell"></div>
+        <div class="r7 c8 cell"></div>
+        <div class="r7 c9 cell"></div>
 
-      <div class="r7 c1 cell"></div>
-      <div class="r7 c2 cell"></div>
-      <div class="r7 c3 cell left-vertical"></div>
-      <div class="r7 c4 cell"></div>
-      <div class="r7 c5 cell"></div>
-      <div class="r7 c6 cell right-vertical"></div>
-      <div class="r7 c7 cell"></div>
-      <div class="r7 c8 cell"></div>
-      <div class="r7 c9 cell"></div>
+        <div class="r8 c1 cell"></div>
+        <div class="r8 c2 cell"></div>
+        <div class="r8 c3 cell left-vertical"></div>
+        <div class="r8 c4 cell"></div>
+        <div class="r8 c5 cell"></div>
+        <div class="r8 c6 cell right-vertical"></div>
+        <div class="r8 c7 cell"></div>
+        <div class="r8 c8 cell"></div>
+        <div class="r8 c9 cell"></div> 
 
-      <div class="r8 c1 cell"></div>
-      <div class="r8 c2 cell"></div>
-      <div class="r8 c3 cell left-vertical"></div>
-      <div class="r8 c4 cell"></div>
-      <div class="r8 c5 cell"></div>
-      <div class="r8 c6 cell right-vertical"></div>
-      <div class="r8 c7 cell"></div>
-      <div class="r8 c8 cell"></div>
-      <div class="r8 c9 cell"></div> 
-
-      <div class="r9 c1 cell"></div>
-      <div class="r9 c2 cell"></div>
-      <div class="r9 c3 cell left-vertical"></div>
-      <div class="r9 c4 cell"></div>
-      <div class="r9 c5 cell"></div>
-      <div class="r9 c6 cell right-vertical"></div>
-      <div class="r9 c7 cell"></div>
-      <div class="r9 c8 cell"></div>
-      <div class="r9 c9 cell"></div>
+        <div class="r9 c1 cell"></div>
+        <div class="r9 c2 cell"></div>
+        <div class="r9 c3 cell left-vertical"></div>
+        <div class="r9 c4 cell"></div>
+        <div class="r9 c5 cell"></div>
+        <div class="r9 c6 cell right-vertical"></div>
+        <div class="r9 c7 cell"></div>
+        <div class="r9 c8 cell"></div>
+        <div class="r9 c9 cell"></div>
+    </div>
   </div>
   <script src ="script.js"></script>  
 </body>
