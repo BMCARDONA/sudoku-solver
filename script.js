@@ -9,74 +9,64 @@ color = "rgb(145, 70, 255)";
 untouchedColor = "grey";
 incorrectColor = "red"
 solvedColor = "green";
+r1 = document.querySelectorAll(".r1");
+r2 = document.querySelectorAll(".r2");
+r3 = document.querySelectorAll(".r3");
+r4 = document.querySelectorAll(".r4");
+r5 = document.querySelectorAll(".r5");
+r6 = document.querySelectorAll(".r6");
+r7 = document.querySelectorAll(".r7");
+r8 = document.querySelectorAll(".r8");
+r9 = document.querySelectorAll(".r9");
 
 
 
-
-
-// Helpful link: https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist
-const getColumn = (colNumber, lines) =>
-{
+// The next five functions will generate an arbitrary, SOLVED sudoku grid
+const getColumn = (colNumber, lines) => {
     const col = [];
-    for (let i = 0; i < lines.length; ++i)
-    {
+    for (let i = 0; i < lines.length; ++i) {
         const line = lines[i];
         col.push(line[colNumber]);
     }
     return col;
 };
 
-const getAllowed = (column, picks) =>
-{
+const getAllowed = (column, picks) => {
     const choosable = [];
-    for (let i = 0; i < picks.length; ++i)
-    {
+    for (let i = 0; i < picks.length; ++i) {
         const pick = picks[i];
-        if (!column.includes(pick))
-        {
+        if (!column.includes(pick)) {
             choosable.push(pick);
         }
     }
     return choosable;
 };
 
-function getSquare(colNumber, lineNumber, lines)
-{
+function getSquare(colNumber, lineNumber, lines) {
     const detected = [];
-    if (!lineNumber)
-    {
+    if (!lineNumber) {
         return detected;
     }
-
     let startCol = Math.floor(colNumber / 3) * 3;
     let endCol = startCol + 3;
-
     let startLine = Math.floor(lineNumber / 3) * 3;
     let endLine = Math.min(startLine + 3, lines.length);
-
-    for (let i = startCol; i < endCol; ++i)
-    {
-        for (let j = startLine; j < endLine; ++j)
-        {
+    for (let i = startCol; i < endCol; ++i) {
+        for (let j = startLine; j < endLine; ++j) {
             const item = lines[j][i];
-            if (item !== undefined)
-            {
+            if (item !== undefined) {
                 detected.push(item);
             }
         }
     }
-
     return detected;
 }
 
-const generateRandomLine = (lines) =>
-{
+const generateRandomLine = (lines) => {
     const line = [];
     let selectables = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (let i = 0; i < 9; ++i)
-    {
+    for (let i = 0; i < 9; ++i) {
         const column = getColumn(i, lines);
-
         let allowed;
 
         // Remove column items
@@ -92,8 +82,7 @@ const generateRandomLine = (lines) =>
         const random = allowed.length > 1 ? Math.floor(Math.random() * allowed.length) : 0;
 
         const chosen = allowed[random];
-        if (chosen === undefined)
-        {
+        if (chosen === undefined) {
             return false;
         }
         line.push(chosen);
@@ -104,88 +93,61 @@ const generateRandomLine = (lines) =>
     return line;
 };
 
-const generateGrid = () =>
-{
+const generateGrid = () => {
     let iterations;
-    do
-    {
+    do {
         const grid = [];
         iterations = 0;
-        do
-        {
+        do {
             ++iterations;
-            if (iterations > 500)
-            {
+            if (iterations > 500) {
                 iterations = -1;
                 // Invalid
                 break;
             }
-
             const line = generateRandomLine(grid);
-            if (!line)
-            {
+            if (!line) {
                 continue;
             }
             grid.push(line);
-
-
         } while (grid.length < 9);
-
-        if (iterations !== -1)
-        {
+        if (iterations !== -1) {
             return grid;
         }
-
     } while (true);
 
 };
 
+
+// getRandomInt enables us to add zeroes to random cells in the solved sudoku grid -- thereby making the grid UNSOLVED.
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// displayGrid = () => {
-//     const grid = generateGrid();
-//     board = []
-//     for (let i = 0; i < grid.length; ++i) {
-//         const line = grid[i];
-//         board.push(line)
-//         console.log(JSON.stringify(line));
-//     }
-//     let counter = 0;
-//     // Here, 30 represents the # of NUMBERED cells!
-//     while (counter < (81 - 4)) {
-//         i = getRandomInt(0, 8);
-//         j = getRandomInt(0, 8);
-//         if (board[i][j] != 0) {
-//             board[i][j] = 0;
-//             counter += 1;
-//         }
-//       }
-//     return(board);
-// };
 
+
+// displayGrid will give us generate the board we want, depending on whether the difficulty is easy, medium, hard, or impossible
 displayGrid = (difficulty) => {
   if (difficulty == "impossible") {
     // color = "rgb(144, 77, 111)";
-    color = "rgb(222, 49, 99)";
+    color = "rgb(152, 68, 100)";
     numberedTiles = 5;
   }
   else if (difficulty == "hard") {
     // color = "rgb(0, 100, 162)";
-    color = "rgb(212, 169, 72)";
+    color = "rgb(105, 93, 84)";
     numberedTiles = 20;
   }
   else if (difficulty == "medium") {
     // color = "rgb(212, 169, 72)";
-    color = "rgb(0, 126, 232)";
+    color = "rgb(0, 103, 138)";
     numberedTiles = 45;
   }
   else if (difficulty == "easy") {
     // color = "rgb(217, 78, 103)";
-    color = "rgb(46, 139, 87)";
+    color = "rgb(60, 91, 81)";
     
     numberedTiles = 65;
   }
@@ -209,21 +171,6 @@ displayGrid = (difficulty) => {
   return(board);
 };
 
-///////////////////////////////////////////////////////////////////////
-
-r1 = document.querySelectorAll(".r1");
-r2 = document.querySelectorAll(".r2");
-r3 = document.querySelectorAll(".r3");
-r4 = document.querySelectorAll(".r4");
-r5 = document.querySelectorAll(".r5");
-r6 = document.querySelectorAll(".r6");
-r7 = document.querySelectorAll(".r7");
-r8 = document.querySelectorAll(".r8");
-r9 = document.querySelectorAll(".r9");
-
-function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 function printUnsolvedBoard() {
       // r1
@@ -554,11 +501,8 @@ solveBoard.addEventListener('click', () => {
     printSolvedBoard()
     })
 
-
-
-
 // ########################################################################
-// Do not edit below 
+// Solve Sudoku board
 function solveSudoku(board) {
   solvePartialSudoku(0, 0, board);
   return board;
