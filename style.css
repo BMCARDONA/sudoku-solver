@@ -2,6 +2,50 @@
   font-family: 'Lato', sans-serif;
 }
 
+.background {
+  padding: 0px;
+  margin: 0px;
+  border-width: 0px;
+  background: #0d3629;
+}
+
+@keyframes secondAnimation {
+  50% {
+    background: rgb(33, 33, 33);
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 80px;
+  padding: 10px;
+  background-color: black;
+  color: rgb(112, 80, 56);
+  /* color: #0d3629; */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: rgb(45, 45, 45);
+}
+
+.background {
+  /* background: aliceblue; */
+  /* background: #0d3629; */
+  background: rgb(112, 80, 56);
+  animation-name: secondAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+
 .grid-border {
   display: flex;
   justify-content: center;
@@ -43,32 +87,6 @@
 
 /* Ignore for now */
 
-.background {
-  /* background: aliceblue; */
-  /* background: rgb(33, 33, 33); */
-  background: #0d3629;
-  animation-name: secondAnimation;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0;
-  animation-direction: alternate;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
-}
-
-.title {
-  text-align: center;
-  font-size: 80px;
-  color: #EFBB37;
-  /* color: #0d3629; */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 
 .cell:hover {
   /* https://stackoverflow.com/questions/40734464/javascript-backgroundcolor-does-remove-css-hover */
@@ -85,7 +103,6 @@
 }
 
 @keyframes scaleCellAnimation {
-  
   50% {
     transform: scale(1.2);
   }
@@ -100,14 +117,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-
-@keyframes secondAnimation {
-  
-  50% {
-    background: rgb(33, 33, 33);
-  }
 }
 
 
@@ -126,7 +135,6 @@
 .solveBoard {
   cursor: pointer;
   font-size: 30px;
-  color: #0D2A36;
   background:#979797;
   border: 0px;
   border-radius: 5px;
