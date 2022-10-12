@@ -3,7 +3,7 @@
 
 ## Features
 - [X] Generate random board
-- [X] Play on board
+- [X] Playable
 - [X] Solve any puzzle. (Red tiles indicate incorrect answers; green tiles indicate correct answers.)
 - [x] Difficulties:
   - [X] Easy
